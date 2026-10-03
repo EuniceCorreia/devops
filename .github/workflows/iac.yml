@@ -9,11 +9,11 @@ on:
     branches: [main]
     paths:
     - 'terraform/**'
-    workflow_dispath:
+    workflow_dispatch:
 
     defaults:
     run:
-        working-diretory: terraform
+        working-directory: terraform
 
 jobs:
   build:
