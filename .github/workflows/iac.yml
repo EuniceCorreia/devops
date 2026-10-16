@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build da imagem no Docker local
-        run: docker build -t "$IMAGE" app
+        run: docker build -t "$IMAGE" .
 
       # Sem registry: a imagem vai para o stage de deploy como artefato
       - name: Exportar imagem

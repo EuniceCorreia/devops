@@ -1,0 +1,11 @@
+﻿{
+  "agentId": 23,
+  "agentName": "EUNICE",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelinesghubeus6.actions.githubusercontent.com/piOIs66YmKHGkeEADtyFOauGmK8QWjhjtrVbeGvyztA2vPIlT5/",
+  "gitHubUrl": "https://github.com/EuniceCorreia/devops",
+  "workFolder": "_work",
+  "useV2Flow": true,
+  "serverUrlV2": "https://broker.actions.githubusercontent.com/"
+}

@@ -1,0 +1,3979 @@
+[2026-10-16 23:06:33Z INFO HostContext] No proxy settings were found based on environmental variables (http_proxy/https_proxy/HTTP_PROXY/HTTPS_PROXY)
+[2026-10-16 23:06:33Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:33Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:33Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\nicec\devops\actions-runner\.credentials'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'Runner': 'C:\Users\nicec\devops\actions-runner\.runner'
+[2026-10-16 23:06:34Z INFO Worker] Version: 2.337.0
+[2026-10-16 23:06:34Z INFO Worker] Commit: 397b032cbf865e9c3ddfab89d533ec19325e1273
+[2026-10-16 23:06:34Z INFO Worker] Culture: pt-BR
+[2026-10-16 23:06:34Z INFO Worker] UI Culture: pt-BR
+[2026-10-16 23:06:34Z INFO Worker] Waiting to receive the job message from the channel.
+[2026-10-16 23:06:34Z INFO ProcessChannel] Receiving message of length 23410, with hash 'd90996c014b9cabb3aace85c58898fe548992803ef97f35ad973644520ad85ea'
+[2026-10-16 23:06:34Z INFO Worker] Message received.
+[2026-10-16 23:06:34Z INFO Worker] Job message:
+ {
+  "environmentVariables": [
+    {
+      "type": 2,
+      "file": 1,
+      "line": 9,
+      "col": 3,
+      "map": [
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 9,
+            "col": 3,
+            "lit": "IMAGE"
+          },
+          "value": {
+            "type": 0,
+            "file": 1,
+            "line": 9,
+            "col": 10,
+            "lit": "nginx-aula-11:1.0.0"
+          }
+        },
+        {
+          "key": {
+            "type": 0,
+            "file": 1,
+            "line": 10,
+            "col": 3,
+            "lit": "CLUSTER_NAME"
+          },
+          "value": {
+            "type": 0,
+            "file": 1,
+            "line": 10,
+            "col": 17,
+            "lit": "aula-11"
+          }
+        }
+      ]
+    }
+  ],
+  "fileTable": [
+    ".github/workflows/iac.yml"
+  ],
+  "mask": [
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    },
+    {
+      "type": "regex",
+      "value": "***"
+    }
+  ],
+  "steps": [
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/checkout",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 17,
+        "col": 15,
+        "lit": "Checkout"
+      },
+      "contextName": "__actions_checkout",
+      "condition": "success()",
+      "id": "d4b9de92-b6fa-415a-8427-2ec7a8f105c9",
+      "name": "__actions_checkout"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 20,
+        "col": 15,
+        "lit": "Build da imagem no Docker local"
+      },
+      "contextName": "__run",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 21,
+              "col": 14,
+              "lit": "docker build -t \"$IMAGE\" app"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "6fa65807-df90-4d74-a3ff-c3d0d8c8b938",
+      "name": "__run"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "script"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 24,
+        "col": 15,
+        "lit": "Exportar imagem"
+      },
+      "contextName": "__run_2",
+      "inputs": {
+        "type": 2,
+        "map": [
+          {
+            "key": "script",
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 25,
+              "col": 14,
+              "lit": "docker save \"$IMAGE\" -o imagem.tar"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "c6f2620e-4efc-4f81-8e28-c289c170111e",
+      "name": "__run_2"
+    },
+    {
+      "type": "action",
+      "reference": {
+        "type": "repository",
+        "name": "actions/upload-artifact",
+        "ref": "v4",
+        "repositoryType": "GitHub"
+      },
+      "displayNameToken": {
+        "type": 0,
+        "file": 1,
+        "line": 27,
+        "col": 15,
+        "lit": "Publicar artefato da imagem"
+      },
+      "contextName": "__actions_upload-artifact",
+      "inputs": {
+        "type": 2,
+        "file": 1,
+        "line": 30,
+        "col": 11,
+        "map": [
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 30,
+              "col": 11,
+              "lit": "name"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 30,
+              "col": 17,
+              "lit": "imagem"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 31,
+              "col": 11,
+              "lit": "path"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 31,
+              "col": 17,
+              "lit": "imagem.tar"
+            }
+          },
+          {
+            "key": {
+              "type": 0,
+              "file": 1,
+              "line": 32,
+              "col": 11,
+              "lit": "retention-days"
+            },
+            "value": {
+              "type": 0,
+              "file": 1,
+              "line": 32,
+              "col": 27,
+              "lit": "1"
+            }
+          }
+        ]
+      },
+      "condition": "success()",
+      "id": "4d29e6fc-affd-4bce-adae-58b59a16a403",
+      "name": "__actions_upload-artifact"
+    }
+  ],
+  "variables": {
+    "Actions.EnableHttpRedirects": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode12Action": {
+      "value": "true"
+    },
+    "DistributedTask.AddWarningToNode16Action": {
+      "value": "true"
+    },
+    "DistributedTask.AllowRunnerContainerHooks": {
+      "value": "true"
+    },
+    "DistributedTask.DeprecateStepOutputCommands": {
+      "value": "true"
+    },
+    "DistributedTask.DetailUntarFailure": {
+      "value": "true"
+    },
+    "DistributedTask.EnableCompositeActions": {
+      "value": "true"
+    },
+    "DistributedTask.EnableJobServerQueueTelemetry": {
+      "value": "true"
+    },
+    "DistributedTask.EnhancedAnnotations": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode16": {
+      "value": "true"
+    },
+    "DistributedTask.ForceGithubJavascriptActionsToNode20": {
+      "value": "true"
+    },
+    "DistributedTask.LogTemplateErrorsAsDebugMessages": {
+      "value": "true"
+    },
+    "DistributedTask.MarkJobAsFailedOnWorkerCrash": {
+      "value": "true"
+    },
+    "DistributedTask.NewActionMetadata": {
+      "value": "true"
+    },
+    "DistributedTask.UploadStepSummary": {
+      "value": "true"
+    },
+    "DistributedTask.UseActionArchiveCache": {
+      "value": "true"
+    },
+    "DistributedTask.UseWhich2": {
+      "value": "true"
+    },
+    "RunService.FixEmbeddedIssues": {
+      "value": "true"
+    },
+    "actions.runner.requirenode24": {
+      "value": "true"
+    },
+    "actions.runner.usenode24bydefault": {
+      "value": "true"
+    },
+    "actions.runner.warnonnode20": {
+      "value": "true"
+    },
+    "actions_add_check_run_id_to_job_context": {
+      "value": "true"
+    },
+    "actions_batch_action_resolution": {
+      "value": "false"
+    },
+    "actions_cache_mode": {
+      "value": "write"
+    },
+    "actions_container_action_runner_temp": {
+      "value": "true"
+    },
+    "actions_display_helpful_actions_download_errors": {
+      "value": "true"
+    },
+    "actions_runner_allow_artifacts_file": {
+      "value": "true"
+    },
+    "actions_runner_compare_workflow_parser": {
+      "value": "false"
+    },
+    "actions_runner_deprecate_linux_arm32": {
+      "value": "true"
+    },
+    "actions_runner_emit_composite_markers": {
+      "value": "true"
+    },
+    "actions_runner_kill_linux_arm32": {
+      "value": "true"
+    },
+    "actions_runner_node20_removal_date": {
+      "value": "September 23rd, 2026"
+    },
+    "actions_runner_node24_default_date": {
+      "value": "June 16th, 2026"
+    },
+    "actions_self_repository": {
+      "value": "true"
+    },
+    "actions_service_container_command": {
+      "value": "true"
+    },
+    "actions_set_orchestration_id_env_for_actions": {
+      "value": "true"
+    },
+    "actions_skip_retry_complete_job_upon_known_errors": {
+      "value": "true"
+    },
+    "actions_snapshot_preflight_hosted_runner_check": {
+      "value": "false"
+    },
+    "actions_snapshot_preflight_image_gen_pool_check": {
+      "value": "false"
+    },
+    "actions_use_bearer_token_for_codeload": {
+      "value": "false"
+    },
+    "actions_uses_cache_service_v2": {
+      "value": "true"
+    },
+    "github_token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.from_run_service": {
+      "value": "true"
+    },
+    "system.github.job": {
+      "value": "build"
+    },
+    "system.github.launch_endpoint": {
+      "value": "https://launch.actions.githubusercontent.com"
+    },
+    "system.github.results_endpoint": {
+      "value": "https://results-receiver.actions.githubusercontent.com/"
+    },
+    "system.github.results_upload_with_sdk": {
+      "value": "true"
+    },
+    "system.github.token": {
+      "value": "***",
+      "isSecret": true
+    },
+    "system.github.token.permissions": {
+      "value": "{\"Contents\":\"read\",\"Metadata\":\"read\",\"Packages\":\"read\"}"
+    },
+    "system.orchestrationId": {
+      "value": "a239ed9d-84cd-88a2-a052-30817daf9410.build.__default"
+    },
+    "system.phaseDisplayName": {
+      "value": "Build"
+    },
+    "system.runner.lowdiskspacethreshold": {
+      "value": "100"
+    },
+    "system.runnerEnvironment": {
+      "value": "self-hosted"
+    },
+    "system.runnerGroupName": {
+      "value": "Default"
+    }
+  },
+  "messageType": "RunnerJobRequest",
+  "plan": {
+    "scopeIdentifier": "00000000-0000-0000-0000-000000000000",
+    "planType": "actions",
+    "version": 0,
+    "planId": "a239ed9d-84cd-88a2-a052-30817daf9410",
+    "planGroup": null,
+    "artifactUri": null,
+    "artifactLocation": null,
+    "definition": null,
+    "owner": null
+  },
+  "timeline": {
+    "id": "a239ed9d-84cd-88a2-a052-30817daf9410",
+    "changeId": 0,
+    "location": null
+  },
+  "jobId": "d28c072b-9393-5506-a58a-370a34945d1b",
+  "jobDisplayName": "Build",
+  "jobName": "__default",
+  "requestId": 0,
+  "lockedUntil": "0001-01-01T00:00:00",
+  "resources": {
+    "endpoints": [
+      {
+        "data": {
+          "ServerId": "",
+          "ServerName": "",
+          "CacheServerUrl": "https://artifactcache.actions.githubusercontent.com/piOIs66YmKHGkeEADtyFOauGmK8QWjhjtrVbeGvyztA2vPIlT5/",
+          "FeedStreamUrl": "wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock",
+          "ResultsServiceUrl": "https://results-receiver.actions.githubusercontent.com/",
+          "PipelinesServiceUrl": "https://pipelinesghubeus6.actions.githubusercontent.com/piOIs66YmKHGkeEADtyFOauGmK8QWjhjtrVbeGvyztA2vPIlT5/",
+          "GenerateIdTokenUrl": "",
+          "ConnectivityChecks": "[\"https://broker.actions.githubusercontent.com/health\",\"https://token.actions.githubusercontent.com/ready\",\"https://run.actions.githubusercontent.com/health\"]",
+          "ConnectivityAndDNSChecks": ""
+        },
+        "name": "SystemVssConnection",
+        "url": "https://run-actions-2-azure-eastus.actions.githubusercontent.com/265/",
+        "authorization": {
+          "parameters": {
+            "AccessToken": "***"
+          },
+          "scheme": "OAuth"
+        },
+        "isShared": false,
+        "isReady": true
+      }
+    ]
+  },
+  "contextData": {
+    "github": {
+      "t": 2,
+      "d": [
+        {
+          "k": "ref",
+          "v": "refs/heads/main"
+        },
+        {
+          "k": "sha",
+          "v": "0e51735810bc4351d84e1f1228d83dd41ada8901"
+        },
+        {
+          "k": "repository",
+          "v": "EuniceCorreia/devops"
+        },
+        {
+          "k": "repository_owner",
+          "v": "EuniceCorreia"
+        },
+        {
+          "k": "repository_owner_id",
+          "v": "150953326"
+        },
+        {
+          "k": "repositoryUrl",
+          "v": "git://github.com/EuniceCorreia/devops.git"
+        },
+        {
+          "k": "run_id",
+          "v": "38978590091"
+        },
+        {
+          "k": "run_number",
+          "v": "4"
+        },
+        {
+          "k": "retention_days",
+          "v": "90"
+        },
+        {
+          "k": "run_attempt",
+          "v": "2"
+        },
+        {
+          "k": "artifact_cache_size_limit",
+          "v": "10"
+        },
+        {
+          "k": "repository_visibility",
+          "v": "public"
+        },
+        {
+          "k": "actor_id",
+          "v": "150953326"
+        },
+        {
+          "k": "actor",
+          "v": "EuniceCorreia"
+        },
+        {
+          "k": "workflow",
+          "v": "Build e Deploy no kind"
+        },
+        {
+          "k": "head_ref",
+          "v": ""
+        },
+        {
+          "k": "base_ref",
+          "v": ""
+        },
+        {
+          "k": "event_name",
+          "v": "push"
+        },
+        {
+          "k": "server_url",
+          "v": "https://github.com"
+        },
+        {
+          "k": "api_url",
+          "v": "https://api.github.com"
+        },
+        {
+          "k": "graphql_url",
+          "v": "https://api.github.com/graphql"
+        },
+        {
+          "k": "ref_name",
+          "v": "main"
+        },
+        {
+          "k": "ref_protected",
+          "v": false
+        },
+        {
+          "k": "ref_type",
+          "v": "branch"
+        },
+        {
+          "k": "secret_source",
+          "v": "Actions"
+        },
+        {
+          "k": "event",
+          "v": {
+            "t": 2,
+            "d": [
+              {
+                "k": "after",
+                "v": "0e51735810bc4351d84e1f1228d83dd41ada8901"
+              },
+              {
+                "k": "base_ref",
+                "v": null
+              },
+              {
+                "k": "before",
+                "v": "9dab9f58d3d109cd10e1d9827644ed579a2a0a50"
+              },
+              {
+                "k": "commits",
+                "v": {
+                  "t": 1,
+                  "a": [
+                    {
+                      "t": 2,
+                      "d": [
+                        {
+                          "k": "author",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "nice.correia@hotmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Eunice Correia"
+                              },
+                              {
+                                "k": "username",
+                                "v": "EuniceCorreia"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "committer",
+                          "v": {
+                            "t": 2,
+                            "d": [
+                              {
+                                "k": "email",
+                                "v": "nice.correia@hotmail.com"
+                              },
+                              {
+                                "k": "name",
+                                "v": "Eunice Correia"
+                              },
+                              {
+                                "k": "username",
+                                "v": "EuniceCorreia"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "k": "distinct",
+                          "v": true
+                        },
+                        {
+                          "k": "id",
+                          "v": "0e51735810bc4351d84e1f1228d83dd41ada8901"
+                        },
+                        {
+                          "k": "message",
+                          "v": "Atualização"
+                        },
+                        {
+                          "k": "timestamp",
+                          "v": "2026-10-16T19:55:28-03:00"
+                        },
+                        {
+                          "k": "tree_id",
+                          "v": "e01074b36b8a135714e8cf4eee41d7a2009b03e5"
+                        },
+                        {
+                          "k": "url",
+                          "v": "https://github.com/EuniceCorreia/devops/commit/0e51735810bc4351d84e1f1228d83dd41ada8901"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "compare",
+                "v": "https://github.com/EuniceCorreia/devops/compare/9dab9f58d3d1...0e51735810bc"
+              },
+              {
+                "k": "created",
+                "v": false
+              },
+              {
+                "k": "deleted",
+                "v": false
+              },
+              {
+                "k": "forced",
+                "v": false
+              },
+              {
+                "k": "head_commit",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "author",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "nice.correia@hotmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Eunice Correia"
+                          },
+                          {
+                            "k": "username",
+                            "v": "EuniceCorreia"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "committer",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "email",
+                            "v": "nice.correia@hotmail.com"
+                          },
+                          {
+                            "k": "name",
+                            "v": "Eunice Correia"
+                          },
+                          {
+                            "k": "username",
+                            "v": "EuniceCorreia"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "distinct",
+                      "v": true
+                    },
+                    {
+                      "k": "id",
+                      "v": "0e51735810bc4351d84e1f1228d83dd41ada8901"
+                    },
+                    {
+                      "k": "message",
+                      "v": "Atualização"
+                    },
+                    {
+                      "k": "timestamp",
+                      "v": "2026-10-16T19:55:28-03:00"
+                    },
+                    {
+                      "k": "tree_id",
+                      "v": "e01074b36b8a135714e8cf4eee41d7a2009b03e5"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://github.com/EuniceCorreia/devops/commit/0e51735810bc4351d84e1f1228d83dd41ada8901"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "pusher",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "email",
+                      "v": "150953326+EuniceCorreia@users.noreply.github.com"
+                    },
+                    {
+                      "k": "name",
+                      "v": "EuniceCorreia"
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "ref",
+                "v": "refs/heads/main"
+              },
+              {
+                "k": "repository",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "allow_forking",
+                      "v": true
+                    },
+                    {
+                      "k": "archive_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/{archive_format}{/ref}"
+                    },
+                    {
+                      "k": "archived",
+                      "v": false
+                    },
+                    {
+                      "k": "assignees_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/assignees{/user}"
+                    },
+                    {
+                      "k": "blobs_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/git/blobs{/sha}"
+                    },
+                    {
+                      "k": "branches_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/branches{/branch}"
+                    },
+                    {
+                      "k": "clone_url",
+                      "v": "https://github.com/EuniceCorreia/devops.git"
+                    },
+                    {
+                      "k": "collaborators_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/collaborators{/collaborator}"
+                    },
+                    {
+                      "k": "comments_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/comments{/number}"
+                    },
+                    {
+                      "k": "commits_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/commits{/sha}"
+                    },
+                    {
+                      "k": "compare_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/compare/{base}...{head}"
+                    },
+                    {
+                      "k": "contents_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/contents/{+path}"
+                    },
+                    {
+                      "k": "contributors_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/contributors"
+                    },
+                    {
+                      "k": "created_at",
+                      "v": 1790375663.0
+                    },
+                    {
+                      "k": "default_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "deployments_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/deployments"
+                    },
+                    {
+                      "k": "description",
+                      "v": null
+                    },
+                    {
+                      "k": "disabled",
+                      "v": false
+                    },
+                    {
+                      "k": "downloads_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/downloads"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/events"
+                    },
+                    {
+                      "k": "fork",
+                      "v": false
+                    },
+                    {
+                      "k": "forks",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "forks_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/forks"
+                    },
+                    {
+                      "k": "full_name",
+                      "v": "EuniceCorreia/devops"
+                    },
+                    {
+                      "k": "git_commits_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/git/commits{/sha}"
+                    },
+                    {
+                      "k": "git_refs_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/git/refs{/sha}"
+                    },
+                    {
+                      "k": "git_tags_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/git/tags{/sha}"
+                    },
+                    {
+                      "k": "git_url",
+                      "v": "git://github.com/EuniceCorreia/devops.git"
+                    },
+                    {
+                      "k": "has_discussions",
+                      "v": false
+                    },
+                    {
+                      "k": "has_downloads",
+                      "v": true
+                    },
+                    {
+                      "k": "has_issues",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pages",
+                      "v": false
+                    },
+                    {
+                      "k": "has_projects",
+                      "v": true
+                    },
+                    {
+                      "k": "has_pull_requests",
+                      "v": true
+                    },
+                    {
+                      "k": "has_wiki",
+                      "v": true
+                    },
+                    {
+                      "k": "homepage",
+                      "v": null
+                    },
+                    {
+                      "k": "hooks_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/hooks"
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/EuniceCorreia/devops"
+                    },
+                    {
+                      "k": "id",
+                      "v": 1388252281.0
+                    },
+                    {
+                      "k": "is_template",
+                      "v": false
+                    },
+                    {
+                      "k": "issue_comment_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/issues/comments{/number}"
+                    },
+                    {
+                      "k": "issue_events_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/issues/events{/number}"
+                    },
+                    {
+                      "k": "issues_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/issues{/number}"
+                    },
+                    {
+                      "k": "keys_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/keys{/key_id}"
+                    },
+                    {
+                      "k": "labels_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/labels{/name}"
+                    },
+                    {
+                      "k": "language",
+                      "v": "HTML"
+                    },
+                    {
+                      "k": "languages_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/languages"
+                    },
+                    {
+                      "k": "license",
+                      "v": null
+                    },
+                    {
+                      "k": "master_branch",
+                      "v": "main"
+                    },
+                    {
+                      "k": "merges_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/merges"
+                    },
+                    {
+                      "k": "milestones_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/milestones{/number}"
+                    },
+                    {
+                      "k": "mirror_url",
+                      "v": null
+                    },
+                    {
+                      "k": "name",
+                      "v": "devops"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "R_kgDOUr8MeQ"
+                    },
+                    {
+                      "k": "notifications_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/notifications{?since,all,participating}"
+                    },
+                    {
+                      "k": "open_issues",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "open_issues_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "owner",
+                      "v": {
+                        "t": 2,
+                        "d": [
+                          {
+                            "k": "avatar_url",
+                            "v": "https://avatars.githubusercontent.com/u/150953326?v=4"
+                          },
+                          {
+                            "k": "email",
+                            "v": "150953326+EuniceCorreia@users.noreply.github.com"
+                          },
+                          {
+                            "k": "events_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/events{/privacy}"
+                          },
+                          {
+                            "k": "followers_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/followers"
+                          },
+                          {
+                            "k": "following_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/following{/other_user}"
+                          },
+                          {
+                            "k": "gists_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/gists{/gist_id}"
+                          },
+                          {
+                            "k": "gravatar_id",
+                            "v": ""
+                          },
+                          {
+                            "k": "html_url",
+                            "v": "https://github.com/EuniceCorreia"
+                          },
+                          {
+                            "k": "id",
+                            "v": 150953326.0
+                          },
+                          {
+                            "k": "login",
+                            "v": "EuniceCorreia"
+                          },
+                          {
+                            "k": "name",
+                            "v": "EuniceCorreia"
+                          },
+                          {
+                            "k": "node_id",
+                            "v": "U_kgDOCP9dbg"
+                          },
+                          {
+                            "k": "organizations_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/orgs"
+                          },
+                          {
+                            "k": "received_events_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/received_events"
+                          },
+                          {
+                            "k": "repos_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/repos"
+                          },
+                          {
+                            "k": "site_admin",
+                            "v": false
+                          },
+                          {
+                            "k": "starred_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/starred{/owner}{/repo}"
+                          },
+                          {
+                            "k": "subscriptions_url",
+                            "v": "https://api.github.com/users/EuniceCorreia/subscriptions"
+                          },
+                          {
+                            "k": "type",
+                            "v": "User"
+                          },
+                          {
+                            "k": "url",
+                            "v": "https://api.github.com/users/EuniceCorreia"
+                          },
+                          {
+                            "k": "user_view_type",
+                            "v": "public"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "k": "private",
+                      "v": false
+                    },
+                    {
+                      "k": "pull_request_creation_policy",
+                      "v": "all"
+                    },
+                    {
+                      "k": "pulls_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/pulls{/number}"
+                    },
+                    {
+                      "k": "pushed_at",
+                      "v": 1792191335.0
+                    },
+                    {
+                      "k": "releases_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/releases{/id}"
+                    },
+                    {
+                      "k": "size",
+                      "v": 447.0
+                    },
+                    {
+                      "k": "ssh_url",
+                      "v": "git@github.com:EuniceCorreia/devops.git"
+                    },
+                    {
+                      "k": "stargazers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "stargazers_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/stargazers"
+                    },
+                    {
+                      "k": "statuses_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/statuses/{sha}"
+                    },
+                    {
+                      "k": "subscribers_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/subscribers"
+                    },
+                    {
+                      "k": "subscription_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/subscription"
+                    },
+                    {
+                      "k": "svn_url",
+                      "v": "https://github.com/EuniceCorreia/devops"
+                    },
+                    {
+                      "k": "tags_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/tags"
+                    },
+                    {
+                      "k": "teams_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/teams"
+                    },
+                    {
+                      "k": "topics",
+                      "v": {
+                        "t": 1
+                      }
+                    },
+                    {
+                      "k": "trees_url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops/git/trees{/sha}"
+                    },
+                    {
+                      "k": "updated_at",
+                      "v": "2026-10-09T23:49:29Z"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/repos/EuniceCorreia/devops"
+                    },
+                    {
+                      "k": "visibility",
+                      "v": "public"
+                    },
+                    {
+                      "k": "watchers",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "watchers_count",
+                      "v": 0.0
+                    },
+                    {
+                      "k": "web_commit_signoff_required",
+                      "v": false
+                    }
+                  ]
+                }
+              },
+              {
+                "k": "sender",
+                "v": {
+                  "t": 2,
+                  "d": [
+                    {
+                      "k": "avatar_url",
+                      "v": "https://avatars.githubusercontent.com/u/150953326?v=4"
+                    },
+                    {
+                      "k": "events_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/events{/privacy}"
+                    },
+                    {
+                      "k": "followers_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/followers"
+                    },
+                    {
+                      "k": "following_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/following{/other_user}"
+                    },
+                    {
+                      "k": "gists_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/gists{/gist_id}"
+                    },
+                    {
+                      "k": "gravatar_id",
+                      "v": ""
+                    },
+                    {
+                      "k": "html_url",
+                      "v": "https://github.com/EuniceCorreia"
+                    },
+                    {
+                      "k": "id",
+                      "v": 150953326.0
+                    },
+                    {
+                      "k": "login",
+                      "v": "EuniceCorreia"
+                    },
+                    {
+                      "k": "node_id",
+                      "v": "U_kgDOCP9dbg"
+                    },
+                    {
+                      "k": "organizations_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/orgs"
+                    },
+                    {
+                      "k": "received_events_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/received_events"
+                    },
+                    {
+                      "k": "repos_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/repos"
+                    },
+                    {
+                      "k": "site_admin",
+                      "v": false
+                    },
+                    {
+                      "k": "starred_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/starred{/owner}{/repo}"
+                    },
+                    {
+                      "k": "subscriptions_url",
+                      "v": "https://api.github.com/users/EuniceCorreia/subscriptions"
+                    },
+                    {
+                      "k": "type",
+                      "v": "User"
+                    },
+                    {
+                      "k": "url",
+                      "v": "https://api.github.com/users/EuniceCorreia"
+                    },
+                    {
+                      "k": "user_view_type",
+                      "v": "public"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "k": "workflow_ref",
+          "v": "EuniceCorreia/devops/.github/workflows/iac.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "0e51735810bc4351d84e1f1228d83dd41ada8901"
+        },
+        {
+          "k": "repository_id",
+          "v": "1388252281"
+        },
+        {
+          "k": "triggering_actor",
+          "v": "EuniceCorreia"
+        }
+      ]
+    },
+    "inputs": {
+      "t": 2
+    },
+    "job": {
+      "t": 2,
+      "d": [
+        {
+          "k": "check_run_id",
+          "v": 117237128359.0
+        },
+        {
+          "k": "workflow_ref",
+          "v": "EuniceCorreia/devops/.github/workflows/iac.yml@refs/heads/main"
+        },
+        {
+          "k": "workflow_sha",
+          "v": "0e51735810bc4351d84e1f1228d83dd41ada8901"
+        },
+        {
+          "k": "workflow_repository",
+          "v": "EuniceCorreia/devops"
+        },
+        {
+          "k": "workflow_file_path",
+          "v": ".github/workflows/iac.yml"
+        }
+      ]
+    },
+    "matrix": null,
+    "needs": {
+      "t": 2
+    },
+    "strategy": {
+      "t": 2,
+      "d": [
+        {
+          "k": "fail-fast",
+          "v": true
+        },
+        {
+          "k": "job-index",
+          "v": 0.0
+        },
+        {
+          "k": "job-total",
+          "v": 1.0
+        },
+        {
+          "k": "max-parallel",
+          "v": 1.0
+        }
+      ]
+    },
+    "vars": {
+      "t": 2
+    }
+  },
+  "billingOwnerId": "U_kgDOCP9dbg"
+}
+[2026-10-16 23:06:34Z INFO JobRunner] Job ID d28c072b-9393-5506-a58a-370a34945d1b
+[2026-10-16 23:06:34Z INFO ConfigurationStore] currentAssemblyLocation: C:\Users\nicec\devops\actions-runner\bin\Runner.Worker.dll
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] binPath: C:\Users\nicec\devops\actions-runner\bin
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] RootFolder: C:\Users\nicec\devops\actions-runner
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'Runner': 'C:\Users\nicec\devops\actions-runner\.runner'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] ConfigFilePath: C:\Users\nicec\devops\actions-runner\.runner
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'MigratedRunner': 'C:\Users\nicec\devops\actions-runner\.runner_migrated'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] MigratedConfigFilePath: C:\Users\nicec\devops\actions-runner\.runner_migrated
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\nicec\devops\actions-runner\.credentials'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] CredFilePath: C:\Users\nicec\devops\actions-runner\.credentials
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'MigratedCredentials': 'C:\Users\nicec\devops\actions-runner\.credentials_migrated'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] MigratedCredFilePath: C:\Users\nicec\devops\actions-runner\.credentials_migrated
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'Service': 'C:\Users\nicec\devops\actions-runner\.service'
+[2026-10-16 23:06:34Z INFO ConfigurationStore] ServiceConfigFilePath: C:\Users\nicec\devops\actions-runner\.service
+[2026-10-16 23:06:34Z INFO ConfigurationStore] Read setting file: 390 chars
+[2026-10-16 23:06:34Z INFO JobRunner] Initializing launch client
+[2026-10-16 23:06:34Z INFO JobServerQueue] Initializing results client
+[2026-10-16 23:06:34Z INFO ResultServer] Creating websocket client ...wss://results-receiver.actions.githubusercontent.com/_ws/ingest.sock
+[2026-10-16 23:06:34Z INFO ResultServer] Attempting to start websocket client with delay 00:00:00.
+[2026-10-16 23:06:34Z INFO JobServerQueue] Start process web console line queue.
+[2026-10-16 23:06:34Z INFO JobServerQueue] Start process file upload queue.
+[2026-10-16 23:06:34Z INFO JobServerQueue] Start results file upload queue.
+[2026-10-16 23:06:34Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-10-16 23:06:34Z INFO JobServerQueue] Start process timeline update queue.
+[2026-10-16 23:06:34Z INFO ExecutionContext] Initializing Job context
+[2026-10-16 23:06:34Z INFO ExecutionContext] Initialize GitHub context
+[2026-10-16 23:06:34Z INFO ExecutionContext] Initialize Env context
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:34Z INFO JobRunner] Starting the job execution context.
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO JobRunner] Validating directory permissions for: 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Tools': 'C:\Users\nicec\devops\actions-runner\_work\_tool'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:34Z INFO JobRunner] Getting job extension.
+[2026-10-16 23:06:34Z INFO JobRunner] Initialize job. Getting all job steps.
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'Credentials': 'C:\Users\nicec\devops\actions-runner\.credentials'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known config file 'SetupInfo': 'C:\Users\nicec\devops\actions-runner\.setup_info'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO PipelineDirectoryManager] Loading tracking config if exists: C:\Users\nicec\devops\actions-runner\_work\_PipelineMapping\EuniceCorreia/devops\PipelineFolder.json
+[2026-10-16 23:06:34Z INFO PipelineDirectoryManager] Creating a new tracking config file.
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO PipelineDirectoryManager] Creating pipeline directory.
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO PipelineDirectoryManager] Creating workspace directory.
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO JobExtension] Downloading actions
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:34Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:34Z INFO Worker] Listening for cancel message from the channel.
+[2026-10-16 23:06:34Z INFO Worker] Waiting for the job to complete or for a cancel message from the channel.
+[2026-10-16 23:06:34Z INFO ResultServer] Successfully started websocket client.
+[2026-10-16 23:06:34Z INFO JobServerQueue] Try to append 1 batches web console lines for record '21dc9e6e-070a-475d-979e-7309d4291b46', success rate: 1/1.
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:35Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:35Z INFO ActionManager] Save archive 'https://codeload.github.com/actions/checkout/zip/11d5960a326750d5838078e36cf38b85af677262' into C:\Users\nicec\devops\actions-runner\_work\_actions\_temp_ee5f5152-63db-4c55-9daf-e9e9c6c1fa77\235621df-fdb9-4821-8373-8e056b101b37.zip.
+[2026-10-16 23:06:35Z INFO ActionManager] Using Basic token for action archive download.
+[2026-10-16 23:06:35Z INFO JobServerQueue] Try to append 1 batches web console lines for record '21dc9e6e-070a-475d-979e-7309d4291b46', success rate: 1/1.
+[2026-10-16 23:06:35Z INFO JobServerQueue] Job timeline record has been updated for the first time.
+[2026-10-16 23:06:35Z INFO ActionManager] Request URL: https://codeload.github.com/actions/checkout/zip/11d5960a326750d5838078e36cf38b85af677262 X-GitHub-Request-Id: FB9C:EAE90:37279:CCC41:6AD2ADFB Http Status: OK
+[2026-10-16 23:06:36Z INFO ActionManager] Finished getting action repository.
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:36Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:36Z INFO ActionManager] Save archive 'https://codeload.github.com/actions/upload-artifact/zip/ea165f8d65b6e75b540449e92b4886f43607fa02' into C:\Users\nicec\devops\actions-runner\_work\_actions\_temp_c01db009-bb9e-43dc-adb7-d26bf59133cc\e05e5bd1-adef-4ed2-9e02-0e492c4e20db.zip.
+[2026-10-16 23:06:36Z INFO ActionManager] Using Basic token for action archive download.
+[2026-10-16 23:06:36Z INFO JobServerQueue] Try to append 1 batches web console lines for record '21dc9e6e-070a-475d-979e-7309d4291b46', success rate: 1/1.
+[2026-10-16 23:06:38Z INFO ActionManager] Request URL: https://codeload.github.com/actions/upload-artifact/zip/ea165f8d65b6e75b540449e92b4886f43607fa02 X-GitHub-Request-Id: FB9D:50195:382A4:CDC89:6AD2ADFC Http Status: OK
+[2026-10-16 23:06:39Z INFO ActionManager] Finished getting action repository.
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:39Z INFO ActionManifestManagerLegacy] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-10-16 23:06:39Z INFO ActionManifestManager] Load schema file with definitions: [
+  "null",
+  "boolean",
+  "number",
+  "string",
+  "sequence",
+  "mapping",
+  "any",
+  "action-root",
+  "inputs",
+  "input",
+  "outputs",
+  "output-definition",
+  "runs",
+  "container-runs",
+  "container-runs-args",
+  "container-runs-env",
+  "node-runs",
+  "plugin-runs",
+  "composite-runs",
+  "composite-steps",
+  "composite-step",
+  "run-step",
+  "uses-step",
+  "container-runs-context",
+  "output-value",
+  "input-default-context",
+  "non-empty-string",
+  "string-steps-context",
+  "boolean-steps-context",
+  "step-env",
+  "step-if",
+  "step-with"
+]
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:39Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-10-16 23:06:40Z INFO ActionManager] Action node.js file: dist/index.js, no more preparation.
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManager] Load action that reference repository from 'C:\Users\nicec\devops\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-10-16 23:06:40Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-10-16 23:06:40Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-10-16 23:06:40Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Ignore action property author.
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 3,
+          "lit": "compression-level"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 36,
+          "col": 14,
+          "lit": "6"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 37,
+          "col": 3,
+          "lit": "overwrite"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 42,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 43,
+          "col": 3,
+          "lit": "include-hidden-files"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 47,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/upload/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-10-16 23:06:40Z INFO ActionManager] Action node.js file: dist/upload/index.js, no more preparation.
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManager] Load action that reference repository from 'C:\Users\nicec\devops\actions-runner\_work\_actions\actions\upload-artifact\v4'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Ignore action property author.
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Upload a Build Artifact",
+  "description": "Upload a build artifact that can be used by subsequent workflow steps",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 5,
+          "col": 3,
+          "lit": "name"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 7,
+          "col": 14,
+          "lit": "artifact"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 8,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 11,
+          "col": 3,
+          "lit": "if-no-files-found"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 19,
+          "col": 14,
+          "lit": "warn"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 20,
+          "col": 3,
+          "lit": "retention-days"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 26,
+          "col": 3,
+          "lit": "compression-level"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 36,
+          "col": 14,
+          "lit": "6"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 37,
+          "col": 3,
+          "lit": "overwrite"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 42,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 3,
+          "line": 43,
+          "col": 3,
+          "lit": "include-hidden-files"
+        },
+        "value": {
+          "type": 0,
+          "file": 3,
+          "line": 47,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": false,
+    "script": "dist/upload/index.js",
+    "pre": null,
+    "post": null,
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-10-16 23:06:40Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-10-16 23:06:40Z INFO ActionManager] Action node.js file: dist/upload/index.js.
+[2026-10-16 23:06:40Z INFO ActionManager] Action post node.js file: N/A.
+[2026-10-16 23:06:40Z INFO JobExtension] Adding .
+[2026-10-16 23:06:40Z INFO JobExtension] Adding .
+[2026-10-16 23:06:40Z INFO JobExtension] Adding .
+[2026-10-16 23:06:40Z INFO JobExtension] Adding .
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO JobExtension] Total accessible running process: 352.
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO JobExtension] Start checking server connectivity.
+[2026-10-16 23:06:40Z INFO JobExtension] Check server connectivity for https://broker.actions.githubusercontent.com/health.
+[2026-10-16 23:06:40Z INFO JobExtension] Check server connectivity for https://token.actions.githubusercontent.com/ready.
+[2026-10-16 23:06:40Z INFO JobExtension] Check server connectivity for https://run.actions.githubusercontent.com/health.
+[2026-10-16 23:06:40Z INFO JobExtension] Start checking service connectivity in background.
+[2026-10-16 23:06:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record '21dc9e6e-070a-475d-979e-7309d4291b46', success rate: 1/1.
+[2026-10-16 23:06:40Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "setup_job",
+  "type": "runner",
+  "stage": "Pre",
+  "stepId": "21dc9e6e-070a-475d-979e-7309d4291b46",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 6,
+  "startTime": "2026-10-16T23:06:34.3975181Z",
+  "finishTime": "2026-10-16T23:06:40.1288378Z"
+}.
+[2026-10-16 23:06:40Z INFO JobRunner] Total job steps: 4.
+[2026-10-16 23:06:40Z INFO JobRunner] Run all job steps.
+[2026-10-16 23:06:40Z INFO DapDebugger] DapDebugger initialized
+[2026-10-16 23:06:40Z INFO StepsRunner] Processing step: DisplayName='Checkout'
+[2026-10-16 23:06:40Z INFO StepsRunner] Evaluating: success()
+[2026-10-16 23:06:40Z INFO StepsRunner] Result: true
+[2026-10-16 23:06:40Z INFO StepsRunner] Starting the step.
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO StepsRunner] Which2: 'chcp'
+[2026-10-16 23:06:40Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] Starting process:
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] Process started with process id 3632, waiting for process exit.
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] Finished process 3632 with exit code 0, and elapsed time 00:00:00.0461687.
+[2026-10-16 23:06:40Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManager] Load action that reference repository from 'C:\Users\nicec\devops\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-10-16 23:06:40Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-10-16 23:06:40Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-10-16 23:06:40Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-10-16 23:06:40Z INFO ExecutionContext] Reserve record order 6 to 10 for post job actions.
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:40Z INFO ExecutionContext] Write event payload to C:\Users\nicec\devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathFileCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvFileCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateStepSummaryCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateFileCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputFileCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.CreateArtifactsFileCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ArtifactsListFileCommand, Runner.Worker
+[2026-10-16 23:06:40Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_9594b0ab-84bd-45ad-b0d6-704a0d251bd2'
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "EuniceCorreia/devops"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'ref': default value evaluate result: ""
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-10-16 23:06:40Z INFO ActionManifestManagerLegacy] Input 'allow-unsafe-pr-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 109,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:40Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.InternalPluginSetRepoPathCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetEnvCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SetOutputCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.SaveStateCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddPathCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMaskCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.AddMatcherCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.RemoveMatcherCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.WarningCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.ErrorCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.NoticeCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.DebugCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.GroupCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EndGroupCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ExtensionManager] Creating instance: GitHub.Runner.Worker.EchoCommandExtension, Runner.Worker
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command error
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command group
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-10-16 23:06:40Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:40Z INFO HostContext] Well known directory 'Externals': 'C:\Users\nicec\devops\actions-runner\externals'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] Starting process:
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\nicec\devops\actions-runner\externals\node24\bin\node.exe'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\nicec\devops\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\nicec\devops\actions-runner\_work\devops\devops'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-10-16 23:06:40Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:40Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-10-16 23:06:40Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\nicec\devops\actions-runner\_diag\blocks\a239ed9d-84cd-88a2-a052-30817daf9410_21dc9e6e-070a-475d-979e-7309d4291b46.1
+[2026-10-16 23:06:40Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-10-16 23:06:40Z INFO ProcessInvokerWrapper] Process started with process id 31344, waiting for process exit.
+[2026-10-16 23:06:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:41Z INFO AddMaskCommandExtension] Add new secret mask with length of 524
+[2026-10-16 23:06:41Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-10-16 23:06:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:41Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:43Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:44Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:45Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:46Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] Finished process 31344 with exit code 0, and elapsed time 00:00:06.9176421.
+[2026-10-16 23:06:47Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_9594b0ab-84bd-45ad-b0d6-704a0d251bd2) is empty; skipping attachment upload
+[2026-10-16 23:06:47Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\artifacts_9594b0ab-84bd-45ad-b0d6-704a0d251bd2'
+[2026-10-16 23:06:47Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-10-16 23:06:47Z INFO StepsRunner] Step result: 
+[2026-10-16 23:06:47Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node24",
+  "stage": "Main",
+  "stepId": "d4b9de92-b6fa-415a-8427-2ec7a8f105c9",
+  "stepContextName": "__actions_checkout",
+  "hasPreStep": false,
+  "hasPostStep": true,
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 8,
+  "startTime": "2026-10-16T23:06:40.1582958Z",
+  "finishTime": "2026-10-16T23:06:47.2530125Z"
+}.
+[2026-10-16 23:06:47Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-10-16 23:06:47Z INFO StepsRunner] Current state: job state = ''
+[2026-10-16 23:06:47Z INFO StepsRunner] Processing step: DisplayName='Build da imagem no Docker local'
+[2026-10-16 23:06:47Z INFO StepsRunner] Evaluating: success()
+[2026-10-16 23:06:47Z INFO StepsRunner] Result: true
+[2026-10-16 23:06:47Z INFO StepsRunner] Starting the step.
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:47Z INFO StepsRunner] Which2: 'chcp'
+[2026-10-16 23:06:47Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] Starting process:
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] Process started with process id 5668, waiting for process exit.
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] Finished process 5668 with exit code 0, and elapsed time 00:00:00.0153300.
+[2026-10-16 23:06:47Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:47Z INFO ExecutionContext] Write event payload to C:\Users\nicec\devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:47Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-10-16 23:06:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'd4b9de92-b6fa-415a-8427-2ec7a8f105c9', success rate: 1/1.
+[2026-10-16 23:06:47Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_0c3a6751-99ff-4188-9ddf-1b4b91c8f013'
+[2026-10-16 23:06:47Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command error
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command group
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-10-16 23:06:47Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-10-16 23:06:47Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-10-16 23:06:47Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-10-16 23:06:47Z INFO ScriptHandler] Defaulting to powershell
+[2026-10-16 23:06:47Z INFO ScriptHandler] Which2: 'powershell'
+[2026-10-16 23:06:47Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:47Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:47Z INFO ScriptHandler] Which2: 'pwsh'
+[2026-10-16 23:06:47Z INFO ScriptHandler] pwsh: command not found. Make sure 'pwsh' is installed and its location included in the 'Path' environment variable.
+[2026-10-16 23:06:47Z INFO ScriptHandler] Defaulting to powershell
+[2026-10-16 23:06:47Z INFO ScriptHandler] Which2: 'powershell'
+[2026-10-16 23:06:47Z INFO ScriptHandler] Location: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] Starting process:
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\System32\WindowsPowerShell\v1.0\powershell.EXE'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Arguments: '-command ". 'C:\Users\nicec\devops\actions-runner\_work\_temp\47195a05-8e52-4ace-80a1-fee00868be53.ps1'"'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\nicec\devops\actions-runner\_work\devops\devops'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-10-16 23:06:47Z INFO ProcessInvokerWrapper] Process started with process id 31024, waiting for process exit.
+[2026-10-16 23:06:47Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-10-16 23:06:47Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\nicec\devops\actions-runner\_diag\blocks\a239ed9d-84cd-88a2-a052-30817daf9410_d4b9de92-b6fa-415a-8427-2ec7a8f105c9.1
+[2026-10-16 23:06:47Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-10-16 23:06:47Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6fa65807-df90-4d74-a3ff-c3d0d8c8b938', success rate: 1/1.
+[2026-10-16 23:06:47Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] Finished process 31024 with exit code 1, and elapsed time 00:00:01.4255340.
+[2026-10-16 23:06:48Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_0c3a6751-99ff-4188-9ddf-1b4b91c8f013) is empty; skipping attachment upload
+[2026-10-16 23:06:48Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\artifacts_0c3a6751-99ff-4188-9ddf-1b4b91c8f013'
+[2026-10-16 23:06:48Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-10-16 23:06:48Z INFO StepsRunner] Step result: Failed
+[2026-10-16 23:06:48Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "powershell",
+  "type": "run",
+  "stage": "Main",
+  "stepId": "6fa65807-df90-4d74-a3ff-c3d0d8c8b938",
+  "stepContextName": "__run",
+  "result": "failed",
+  "errorMessages": [
+    "Process completed with exit code 1."
+  ],
+  "executionTimeInSeconds": 2,
+  "startTime": "2026-10-16T23:06:47.2559621Z",
+  "finishTime": "2026-10-16T23:06:48.7691504Z"
+}.
+[2026-10-16 23:06:48Z INFO StepsRunner] Update job result with current step result 'Failed'.
+[2026-10-16 23:06:48Z INFO StepsRunner] Current state: job state = 'Failed'
+[2026-10-16 23:06:48Z INFO StepsRunner] Processing step: DisplayName='Exportar imagem'
+[2026-10-16 23:06:48Z INFO StepsRunner] Evaluating: success()
+[2026-10-16 23:06:48Z INFO StepsRunner] Result: false
+[2026-10-16 23:06:48Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2026-10-16 23:06:48Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2026-10-16 23:06:48Z INFO StepsRunner] Current state: job state = 'Failed'
+[2026-10-16 23:06:48Z INFO StepsRunner] Processing step: DisplayName='Publicar artefato da imagem'
+[2026-10-16 23:06:48Z INFO StepsRunner] Evaluating: success()
+[2026-10-16 23:06:48Z INFO StepsRunner] Result: false
+[2026-10-16 23:06:48Z INFO StepsRunner] Skipping step due to condition evaluation.
+[2026-10-16 23:06:48Z INFO StepsRunner] No need for updating job result with current step result 'Skipped'.
+[2026-10-16 23:06:48Z INFO StepsRunner] Current state: job state = 'Failed'
+[2026-10-16 23:06:48Z INFO StepsRunner] Processing step: DisplayName='Post Checkout'
+[2026-10-16 23:06:48Z INFO StepsRunner] Evaluating: always()
+[2026-10-16 23:06:48Z INFO StepsRunner] Result: true
+[2026-10-16 23:06:48Z INFO StepsRunner] Starting the step.
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:48Z INFO StepsRunner] Which2: 'chcp'
+[2026-10-16 23:06:48Z INFO StepsRunner] Location: 'C:\WINDOWS\system32\chcp.COM'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] Starting process:
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   File name: 'C:\WINDOWS\system32\chcp.COM'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Arguments: '65001'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Encoding web name:  ; code page: ''
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] Process started with process id 16912, waiting for process exit.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] Finished process 16912 with exit code 0, and elapsed time 00:00:00.0118007.
+[2026-10-16 23:06:48Z INFO StepsRunner] Successfully returned to code page 65001 (UTF8)
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:48Z INFO ActionManager] Load action that reference repository from 'C:\Users\nicec\devops\actions-runner\_work\_actions\actions\checkout\v4'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Actions': 'C:\Users\nicec\devops\actions-runner\_work\_actions'
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Loaded action.yml file: {
+  "name": "Checkout",
+  "description": "Checkout a Git repository at a particular version",
+  "inputs": {
+    "type": 2,
+    "map": [
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 4,
+          "col": 3,
+          "lit": "repository"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 6,
+          "col": 14,
+          "expr": "github.repository"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 7,
+          "col": 3,
+          "lit": "ref"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 12,
+          "col": 3,
+          "lit": "token"
+        },
+        "value": {
+          "type": 3,
+          "file": 2,
+          "line": 24,
+          "col": 14,
+          "expr": "github.token"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 25,
+          "col": 3,
+          "lit": "ssh-key"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 37,
+          "col": 3,
+          "lit": "ssh-known-hosts"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 42,
+          "col": 3,
+          "lit": "ssh-strict"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 47,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 48,
+          "col": 3,
+          "lit": "ssh-user"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 51,
+          "col": 14,
+          "lit": "git"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 52,
+          "col": 3,
+          "lit": "persist-credentials"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 54,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 55,
+          "col": 3,
+          "lit": "path"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 57,
+          "col": 3,
+          "lit": "clean"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 59,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 60,
+          "col": 3,
+          "lit": "filter"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 64,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 65,
+          "col": 3,
+          "lit": "sparse-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 69,
+          "col": 14,
+          "lit": ""
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 70,
+          "col": 3,
+          "lit": "sparse-checkout-cone-mode"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 73,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 74,
+          "col": 3,
+          "lit": "fetch-depth"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 76,
+          "col": 14,
+          "lit": "1"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 77,
+          "col": 3,
+          "lit": "fetch-tags"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 79,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 80,
+          "col": 3,
+          "lit": "show-progress"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 82,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 83,
+          "col": 3,
+          "lit": "lfs"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 85,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 86,
+          "col": 3,
+          "lit": "submodules"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 94,
+          "col": 14,
+          "lit": "false"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 95,
+          "col": 3,
+          "lit": "set-safe-directory"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 97,
+          "col": 14,
+          "lit": "true"
+        }
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 98,
+          "col": 3,
+          "lit": "github-server-url"
+        },
+        "value": ""
+      },
+      {
+        "key": {
+          "type": 0,
+          "file": 2,
+          "line": 101,
+          "col": 3,
+          "lit": "allow-unsafe-pr-checkout"
+        },
+        "value": {
+          "type": 0,
+          "file": 2,
+          "line": 109,
+          "col": 14,
+          "lit": "false"
+        }
+      }
+    ]
+  },
+  "execution": {
+    "executionType": "nodeJS",
+    "hasPre": false,
+    "hasPost": true,
+    "script": "dist/index.js",
+    "pre": null,
+    "post": "dist/index.js",
+    "nodeVersion": "node20",
+    "cleanupCondition": "always()",
+    "initCondition": "always()"
+  },
+  "deprecated": null
+}
+[2026-10-16 23:06:48Z INFO ActionManager] Action pre node.js file: N/A.
+[2026-10-16 23:06:48Z INFO ActionManager] Action node.js file: dist/index.js.
+[2026-10-16 23:06:48Z INFO ActionManager] Action post node.js file: dist/index.js.
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:48Z INFO ExecutionContext] Write event payload to C:\Users\nicec\devops\actions-runner\_work\_temp\_github_workflow\event.json
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Temp': 'C:\Users\nicec\devops\actions-runner\_work\_temp'
+[2026-10-16 23:06:48Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IFileCommandExtension'
+[2026-10-16 23:06:48Z INFO ArtifactsListFileCommand] Wrote $GITHUB_ARTIFACTS_LIST with 0 subject(s) to 'C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\artifacts_list_8842f128-c1dd-4122-8ff1-4e27127e3ffc'
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'repository': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 6,
+  "col": 14,
+  "lit": "EuniceCorreia/devops"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'ref': default value evaluate result: ""
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'token': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 24,
+  "col": 14,
+  "lit": "***"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'ssh-key': default value evaluate result: ""
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'ssh-known-hosts': default value evaluate result: ""
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'ssh-strict': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 47,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'ssh-user': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 51,
+  "col": 14,
+  "lit": "git"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'persist-credentials': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 54,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'path': default value evaluate result: ""
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'clean': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 59,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'filter': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 64,
+  "col": 14,
+  "lit": ""
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 69,
+  "col": 14,
+  "lit": ""
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'sparse-checkout-cone-mode': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 73,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'fetch-depth': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 76,
+  "col": 14,
+  "lit": "1"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'fetch-tags': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 79,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'show-progress': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 82,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'lfs': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 85,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'submodules': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 94,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'set-safe-directory': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 97,
+  "col": 14,
+  "lit": "true"
+}
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'github-server-url': default value evaluate result: ""
+[2026-10-16 23:06:48Z INFO ActionManifestManagerLegacy] Input 'allow-unsafe-pr-checkout': default value evaluate result: {
+  "type": 0,
+  "file": 2,
+  "line": 109,
+  "col": 14,
+  "lit": "false"
+}
+[2026-10-16 23:06:48Z INFO ExtensionManager] Getting extensions for interface: 'GitHub.Runner.Worker.IActionCommandExtension'
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command internal-set-repo-path
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command set-env
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command set-output
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command save-state
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command add-path
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command add-mask
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command add-matcher
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command remove-matcher
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command warning
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command error
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command notice
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command debug
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command group
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command endgroup
+[2026-10-16 23:06:48Z INFO ActionCommandManager] Register action command extension for command echo
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:48Z INFO HostContext] Well known directory 'Externals': 'C:\Users\nicec\devops\actions-runner\externals'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] Starting process:
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   File name: 'C:\Users\nicec\devops\actions-runner\externals\node24\bin\node.exe'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Arguments: '"C:\Users\nicec\devops\actions-runner\_work\_actions\actions\checkout\v4\dist/index.js"'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Working directory: 'C:\Users\nicec\devops\actions-runner\_work\devops\devops'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Require exit code zero: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Encoding web name: utf-8 ; code page: '65001'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Force kill process on cancellation: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Redirected STDIN: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Persist current code page: 'True'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   Keep redirected STDIN open: 'False'
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper]   High priority process: 'False'
+[2026-10-16 23:06:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record '6fa65807-df90-4d74-a3ff-c3d0d8c8b938', success rate: 1/1.
+[2026-10-16 23:06:48Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'debe1e47-a8f4-422e-a9e4-d95686ca0b72', success rate: 1/1.
+[2026-10-16 23:06:48Z INFO ProcessInvokerWrapper] Process started with process id 14384, waiting for process exit.
+[2026-10-16 23:06:48Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-10-16 23:06:48Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\nicec\devops\actions-runner\_diag\blocks\a239ed9d-84cd-88a2-a052-30817daf9410_6fa65807-df90-4d74-a3ff-c3d0d8c8b938.1
+[2026-10-16 23:06:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'debe1e47-a8f4-422e-a9e4-d95686ca0b72', success rate: 1/1.
+[2026-10-16 23:06:49Z INFO AddMaskCommandExtension] Add new secret mask with length of 32
+[2026-10-16 23:06:49Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'debe1e47-a8f4-422e-a9e4-d95686ca0b72', success rate: 1/1.
+[2026-10-16 23:06:49Z INFO JobServerQueue] Tried to upload 1 file(s) to results, success rate: 1/1.
+[2026-10-16 23:06:49Z INFO JobServerQueue] Try to upload 1 log files or attachments, success rate: 1/1.
+[2026-10-16 23:06:50Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:50Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:50Z INFO HostContext] Well known directory 'Work': 'C:\Users\nicec\devops\actions-runner\_work'
+[2026-10-16 23:06:50Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'debe1e47-a8f4-422e-a9e4-d95686ca0b72', success rate: 1/1.
+[2026-10-16 23:06:51Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'debe1e47-a8f4-422e-a9e4-d95686ca0b72', success rate: 1/1.
+[2026-10-16 23:06:52Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:52Z INFO ProcessInvokerWrapper] STDOUT/STDERR stream read finished.
+[2026-10-16 23:06:52Z INFO ProcessInvokerWrapper] Finished process 14384 with exit code 0, and elapsed time 00:00:03.2017475.
+[2026-10-16 23:06:52Z INFO CreateStepSummaryCommand] Step Summary file (C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\step_summary_8842f128-c1dd-4122-8ff1-4e27127e3ffc) is empty; skipping attachment upload
+[2026-10-16 23:06:52Z INFO CreateArtifactsFileCommand] Processing $GITHUB_ARTIFACTS file 'C:\Users\nicec\devops\actions-runner\_work\_temp\_runner_file_commands\artifacts_8842f128-c1dd-4122-8ff1-4e27127e3ffc'
+[2026-10-16 23:06:52Z INFO CreateArtifactsFileCommand] $GITHUB_ARTIFACTS file is empty; nothing to process.
+[2026-10-16 23:06:52Z INFO StepsRunner] Step result: 
+[2026-10-16 23:06:52Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "actions/checkout",
+  "ref": "v4",
+  "type": "node24",
+  "stage": "Post",
+  "stepId": "debe1e47-a8f4-422e-a9e4-d95686ca0b72",
+  "result": "succeeded",
+  "errorMessages": [],
+  "executionTimeInSeconds": 4,
+  "startTime": "2026-10-16T23:06:48.7779452Z",
+  "finishTime": "2026-10-16T23:06:52.0198709Z"
+}.
+[2026-10-16 23:06:52Z INFO StepsRunner] No need for updating job result with current step result 'Succeeded'.
+[2026-10-16 23:06:52Z INFO StepsRunner] Current state: job state = 'Failed'
+[2026-10-16 23:06:52Z INFO JobRunner] Finalize job.
+[2026-10-16 23:06:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:52Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:52Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:52Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:52Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:52Z INFO JobExtension] Initialize Env context
+[2026-10-16 23:06:52Z INFO JobExtension] Initialize steps context
+[2026-10-16 23:06:52Z INFO JobExtension] Total accessible running process: 355.
+[2026-10-16 23:06:52Z INFO JobExtension] Inspecting process environment variables. PID: 30064 (svchost)
+[2026-10-16 23:06:52Z WARN JobExtension] Ignore exception during read process environment variables: Acesso negado.
+[2026-10-16 23:06:52Z INFO JobExtension] Inspecting process environment variables. PID: 30464 (git)
+[2026-10-16 23:06:52Z INFO JobExtension] Inspecting process environment variables. PID: 23680 (conhost)
+[2026-10-16 23:06:52Z INFO JobExtension] Inspecting process environment variables. PID: 25244 (git)
+[2026-10-16 23:06:52Z INFO JobExtension] Wait for all connectivity checks to finish.
+[2026-10-16 23:06:52Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://broker.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-10-16T23:06:40.1210511Z",
+  "statusCode": "http_OK",
+  "requestId": "FB9E:120D55:5CAA039:5E4C820:6AD2AE00",
+  "httpRequestDurationInMs": 473,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-10-16 23:06:52Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://token.actions.githubusercontent.com/ready",
+  "endpointIPs": null,
+  "startTime": "2026-10-16T23:06:40.1226501Z",
+  "statusCode": "http_NoContent",
+  "requestId": "FBA0:2CF55C:A2E854:BDE387:6AD2AE00",
+  "httpRequestDurationInMs": 451,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-10-16 23:06:52Z INFO JobExtension] Connectivity check result: {
+  "endpointUrl": "https://run.actions.githubusercontent.com/health",
+  "endpointIPs": null,
+  "startTime": "2026-10-16T23:06:40.1230141Z",
+  "statusCode": "http_OK",
+  "requestId": "FB9F:C1DCC:5C59CAF:5DFCF7A:6AD2AE00",
+  "httpRequestDurationInMs": 593,
+  "dnsResolutionDurationInMs": 0,
+  "dnsError": null
+}
+[2026-10-16 23:06:52Z INFO ExecutionContext] Publish step telemetry for current step {
+  "action": "complete_job",
+  "type": "runner",
+  "stage": "Post",
+  "stepId": "e34c17f4-4b06-4e54-bf11-4e86a7e09f92",
+  "result": "succeeded",
+  "errorMessages": [
+    "Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/"
+  ],
+  "executionTimeInSeconds": 1,
+  "startTime": "2026-10-16T23:06:52.0271729Z",
+  "finishTime": "2026-10-16T23:06:52.0772917Z"
+}.
+[2026-10-16 23:06:52Z INFO JobRunner] Job result after all job steps finish: Failed
+[2026-10-16 23:06:52Z INFO JobRunner] Completing the job execution context.
+[2026-10-16 23:06:52Z INFO JobRunner] Shutting down the job server queue.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Fire signal to shutdown all queues.
+[2026-10-16 23:06:52Z INFO JobServerQueue] All queue process task stopped.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Try to append 1 batches web console lines for record 'e34c17f4-4b06-4e54-bf11-4e86a7e09f92', success rate: 1/1.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Web console line queue drained.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Uploading 3 files in one shot.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Try to upload 3 log files or attachments, success rate: 3/3.
+[2026-10-16 23:06:52Z INFO JobServerQueue] File upload queue drained.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Starting results-based upload queue...
+[2026-10-16 23:06:52Z INFO JobServerQueue] Uploading 3 file(s) in one shot through results service.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-10-16 23:06:52Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\nicec\devops\actions-runner\_diag\blocks\a239ed9d-84cd-88a2-a052-30817daf9410_debe1e47-a8f4-422e-a9e4-d95686ca0b72.1
+[2026-10-16 23:06:53Z INFO JobServerQueue] Got a step log file to send to results service.
+[2026-10-16 23:06:53Z INFO JobServerQueue] Starting upload of step log file to results service ResultsLog, C:\Users\nicec\devops\actions-runner\_diag\blocks\a239ed9d-84cd-88a2-a052-30817daf9410_e34c17f4-4b06-4e54-bf11-4e86a7e09f92.1
+[2026-10-16 23:06:53Z INFO JobServerQueue] Got a job log file to send to results service.
+[2026-10-16 23:06:53Z INFO JobServerQueue] Starting upload of job log file to results service ResultsLog, C:\Users\nicec\devops\actions-runner\_diag\blocks\a239ed9d-84cd-88a2-a052-30817daf9410_d28c072b-9393-5506-a58a-370a34945d1b.1
+[2026-10-16 23:06:54Z INFO JobServerQueue] Tried to upload 3 file(s) to results, success rate: 3/3.
+[2026-10-16 23:06:54Z INFO JobServerQueue] Results upload queue drained.
+[2026-10-16 23:06:54Z INFO JobServerQueue] Timeline update queue drained.
+[2026-10-16 23:06:54Z INFO JobServerQueue] Disposing job server ...
+[2026-10-16 23:06:54Z INFO JobServerQueue] Disposing results server ...
+[2026-10-16 23:06:54Z INFO JobServerQueue] All queue process tasks have been stopped, and all queues are drained.
+[2026-10-16 23:06:54Z INFO TempDirectoryManager] Cleaning runner temp folder: C:\Users\nicec\devops\actions-runner\_work\_temp
+[2026-10-16 23:06:54Z INFO HostContext] Well known directory 'Bin': 'C:\Users\nicec\devops\actions-runner\bin'
+[2026-10-16 23:06:54Z INFO HostContext] Well known directory 'Root': 'C:\Users\nicec\devops\actions-runner'
+[2026-10-16 23:06:54Z INFO HostContext] Well known directory 'Diag': 'C:\Users\nicec\devops\actions-runner\_diag'
+[2026-10-16 23:06:54Z INFO HostContext] Well known config file 'Telemetry': 'C:\Users\nicec\devops\actions-runner\_diag\.telemetry'
+[2026-10-16 23:06:54Z INFO JobRunner] Raising job completed against run service
+[2026-10-16 23:06:54Z INFO Worker] Job completed.
