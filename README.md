@@ -107,6 +107,6 @@ Esse comando confirmou que o cluster Kubernetes estava funcionando.
 
 
 O cluster \*\*devops\*\* foi criado com sucesso pelo Terraform com \*\*1 control-plane e 2 workers\*\*, conforme solicitado na atividade.
-
+--**--
 
 
