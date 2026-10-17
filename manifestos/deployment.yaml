@@ -1,35 +1,39 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-aula-11
+  name: front-aula-12
   labels:
-    app: nginx-aula-11
+    app: front-aula-12
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx-aula-11
+      app: front-aula-12
   template:
     metadata:
       labels:
-        app: nginx-aula-11
+        app: front-aula-12
     spec:
+      # Secret criado pelo pipeline com as credenciais do Docker Hub
+      imagePullSecrets:
+        - name: dockerhub
       containers:
-        - name: nginx
-          image: nginx-aula-11:1.0.0
+        - name: front
+          # O pipeline troca pela imagem do docker.io com a tag do commit
+          image: front-aula-12:1.0.0
           imagePullPolicy: IfNotPresent
           ports:
-            - containerPort: 80
+            - containerPort: 3000
           readinessProbe:
             httpGet:
-              path: /
-              port: 80
+              path: /health
+              port: 3000
             initialDelaySeconds: 2
             periodSeconds: 5
           resources:
             requests:
               cpu: 50m
-              memory: 32Mi
+              memory: 64Mi
             limits:
-              cpu: 200m
-              memory: 128Mi
+              cpu: 250m
+              memory: 256Mi

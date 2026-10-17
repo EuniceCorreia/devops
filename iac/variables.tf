@@ -1,7 +1,7 @@
 variable "cluster_name" {
   description = "Nome do cluster kind"
   type        = string
-  default     = "aula-11"
+  default     = "aula-12"
 }
 
 variable "host_port" {

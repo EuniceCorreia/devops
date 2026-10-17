@@ -9,7 +9,7 @@ resource "kind_cluster" "this" {
     node {
       role = "control-plane"
 
-      # Encaminha localhost:81 para o NodePort do Service do nginx
+      # Encaminha localhost:81 para o NodePort do Service do front
       extra_port_mappings {
         container_port = var.node_port
         host_port      = var.host_port

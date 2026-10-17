@@ -1,0 +1,157 @@
+name: Build e Deploy no kind
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+env:
+  # Imagem no Docker Hub: docker.io/<usuario>/front-aula-12
+  IMAGE_NAME: docker.io/${{ secrets.DOCKER_USERNAME }}/front-aula-12
+  # Tag única por commit: força o rollout dos pods a cada deploy
+  IMAGE: docker.io/${{ secrets.DOCKER_USERNAME }}/front-aula-12:${{ github.sha }}
+  # Nome padrão do kind (mesmo de "kind create cluster")
+  CLUSTER_NAME: kind
+  APP: front-aula-12
+  NODE_PORT: 30081
+
+jobs:
+  sonar:
+    name: Análise SonarCloud
+    runs-on: self-hosted
+    env:
+      SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      SONAR_HOST_URL: https://sonarcloud.io
+      SONAR_ORGANIZATION: ${{ vars.SONAR_ORGANIZATION }}
+      SONAR_PROJECT_KEY: ${{ vars.SONAR_PROJECT_KEY }}
+      SONAR_PROJECT_NAME: ${{ vars.SONAR_PROJECT_NAME }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # histórico completo: blame e detecção de código novo
+
+      - name: Validar configuração do Sonar
+        run: |
+          faltando=0
+          for nome in SONAR_TOKEN SONAR_ORGANIZATION SONAR_PROJECT_KEY SONAR_PROJECT_NAME; do
+            if [ -z "${!nome}" ]; then
+              echo "::error::$nome não configurado (Settings > Secrets and variables > Actions)"
+              faltando=1
+            fi
+          done
+          exit $faltando
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v8
+        with:
+          projectBaseDir: front
+          args: >
+            -Dsonar.organization=${{ vars.SONAR_ORGANIZATION }}
+            -Dsonar.projectKey=${{ vars.SONAR_PROJECT_KEY }}
+            "-Dsonar.projectName=${{ vars.SONAR_PROJECT_NAME }}"
+
+  build:
+    name: Build
+    runs-on: self-hosted
+    needs: sonar
+    env:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validar credenciais do Docker Hub
+        run: |
+          faltando=0
+          for nome in DOCKER_USERNAME DOCKER_PASSWORD; do
+            if [ -z "${!nome}" ]; then
+              echo "::error::Secret $nome não configurado (Settings > Secrets and variables > Actions)"
+              faltando=1
+            fi
+          done
+          exit $faltando
+
+      - name: Login no Docker Hub
+        uses: docker/login-action@v4
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build da imagem
+        run: docker build -t "$IMAGE" -t "$IMAGE_NAME:latest" front
+
+      # A imagem vai para o deploy pelo registry docker.io
+      - name: Push para o Docker Hub
+        run: |
+          docker push "$IMAGE"
+          docker push "$IMAGE_NAME:latest"
+
+  deploy:
+    name: Deploy
+    runs-on: self-hosted
+    needs: build
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar ferramentas
+        run: |
+          docker version --format 'Docker {{.Server.Version}}'
+          kind version
+          kubectl version --client
+
+      # Usa o cluster criado com "kind create cluster"; cria se ainda não existir
+      - name: Garantir cluster kind
+        run: |
+          if kind get clusters | grep -qx "$CLUSTER_NAME"; then
+            echo "Cluster '$CLUSTER_NAME' encontrado"
+          else
+            echo "Cluster '$CLUSTER_NAME' não encontrado, criando..."
+            kind create cluster --name "$CLUSTER_NAME" --wait 120s
+          fi
+
+      - name: Configurar kubectl
+        run: |
+          kind export kubeconfig --name "$CLUSTER_NAME"
+          kubectl get nodes
+
+      # Credencial para o cluster fazer pull do docker.io (funciona também com repositório privado)
+      - name: Criar secret de pull do Docker Hub
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        run: |
+          kubectl create secret docker-registry dockerhub \
+            --docker-server=https://index.docker.io/v1/ \
+            --docker-username="$DOCKER_USERNAME" \
+            --docker-password="$DOCKER_PASSWORD" \
+            --dry-run=client -o yaml | kubectl apply -f -
+
+      - name: Aplicar manifestos
+        run: |
+          kubectl apply -f manifestos/service.yaml
+          sed "s|image: front-aula-12:.*|image: $IMAGE|" manifestos/deployment.yaml | kubectl apply -f -
+
+      - name: Aguardar rollout
+        run: kubectl rollout status "deployment/$APP" --timeout=180s
+
+      # No Linux o IP do nó do kind é acessível direto da VM pelo NodePort
+      - name: Testar aplicação
+        run: |
+          NODE_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[?(@.type=="InternalIP")].address}')
+          URL="http://$NODE_IP:$NODE_PORT"
+          curl --fail --silent --show-error --retry 10 --retry-delay 3 --retry-all-errors "$URL/health"
+          echo
+          curl --fail --silent --show-error "$URL" | head -n 10
+          echo "Aplicação disponível em: $URL"
+          echo "### Aplicação disponível em: $URL" >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Diagnóstico em caso de falha
+        if: failure()
+        run: |
+          kubectl get pods,svc -o wide
+          kubectl describe deployment "$APP"
+          kubectl describe pods -l "app=$APP" | tail -n 30
+          kubectl logs "deployment/$APP" --all-containers --tail=50 || true

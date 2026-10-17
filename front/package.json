@@ -1,0 +1,13 @@
+{
+  "name": "front-aula-12",
+  "version": "1.0.0",
+  "description": "Front básico em Node para análise com SonarQube - Aula 12",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

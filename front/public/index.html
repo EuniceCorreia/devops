@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aula 12 - Loja DevOps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <span class="tag">SATC &middot; DevOps &middot; Aula 12</span>
+    <h1>Loja DevOps</h1>
+    <p class="lead">
+      Front em Node empacotado com Docker, publicado no kind e analisado pelo SonarQube.
+    </p>
+
+    <section>
+      <h2>Produtos</h2>
+      <button id="ordenar" onclick="carregarProdutos(true)">Ordenar por preço</button>
+      <ul id="produtos"></ul>
+    </section>
+
+    <section>
+      <h2>Carrinho</h2>
+      <div id="carrinho">Nenhum item no carrinho.</div>
+      <label>Cupom <input id="cupom" type="text"></label>
+      <button onclick="calcular()">Calcular total</button>
+      <p id="total"></p>
+    </section>
+
+    <section>
+      <h2>Newsletter</h2>
+      <input id="email" type="text" placeholder="seu@email.com">
+      <button onclick="assinar()">Assinar</button>
+      <p id="mensagem"></p>
+    </section>
+
+    <img src="logo.png">
+
+    <footer>
+      Aplicação exposta em <code>http://localhost:81</code>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

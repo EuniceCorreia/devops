@@ -1,0 +1,120 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  color: #e6edf3;
+  background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1f2a44 100%);
+}
+
+main {
+  width: 100%;
+  max-width: 760px;
+  padding: 48px 40px;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  background: rgba(22, 27, 34, 0.85);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #58a6ff;
+  background: rgba(56, 139, 253, 0.15);
+}
+
+h1 {
+  margin: 16px 0 8px;
+  font-size: 2.4rem;
+  line-height: 1.2;
+}
+
+h2 {
+  margin: 28px 0 12px;
+  font-size: 1.3rem;
+  color: #58a6ff;
+  color: #79c0ff;
+}
+
+p.lead {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+  color: #9da7b3;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  list-style: none;
+}
+
+li {
+  padding: 16px;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  background: #0d1117;
+}
+
+li strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+li span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.92rem;
+  color: #9da7b3;
+}
+
+button {
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #0d1117;
+  background: #58a6ff;
+}
+
+input {
+  margin: 0 8px;
+  padding: 6px 10px;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  color: #e6edf3;
+  background: #0d1117;
+}
+
+#carrinho, #total, #mensagem {
+  margin: 10px 0;
+  color: #9da7b3;
+}
+
+#total {
+}
+
+footer {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #30363d;
+  font-size: 0.9rem;
+  color: #9da7b3;
+}
+
+code {
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: Consolas, "Courier New", monospace;
+  color: #7ee787;
+  background: #0d1117;
+}
